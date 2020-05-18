@@ -8,26 +8,26 @@ using System.Collections.Generic;
 
 namespace SpendingTracker
 {
-    public class Months : List<string>
-    {
-        public string January = "January";
-        public string Febuary{get; }
-        public string March{get; }
-        public string April{get; }
-        public string May{get; }
-        public string June{get; }
-        public string July{get; }
-        public string August{get; }
-        public string September{get; }
-        public string October{get; }
-        public string November{get; }
-        public string December{get; }
-        public void SelectMonth()
+    public class Months
+    { 
+        public Months()
         {
-            List<Months> CycleList = new List<Months>();
+            var CycleMonthList = new List<string>()
+            {
+                "January",   //CycleMonthList[0]
+                "Febuary",   //CycleMonthList[1]
+                "March",     //CycleMonthList[2] 
+                "April",     //CycleMonthList[3]
+                "May",       //CycleMonthList[4]
+                "June",      //CycleMonthList[5]
+                "July",      //CycleMonthList[6]
+                "August",    //CycleMonthList[7]
+                "September", //CycleMonthList[8]
+                "October",   //CycleMonthList[9]
+                "December"   //CycleMonthList[10]
+            };
+            
+            
         }
     }
-
-
-
 }

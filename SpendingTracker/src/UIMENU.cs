@@ -8,19 +8,18 @@ using System.Collections.Generic;
 
 namespace SpendingTracker
 {
-    class MainMenu
+    class UIMenus
     {
+        //Variables
         int userInput = 0;
+        int m1 = 1;
+        int m2 = 2;
+        int m3 = 3;
+        int loop = -1;
+        
+        bool quit = false;
         public void mainMenu()
-        {
-            Console.Clear();
-            //variables
-            int m1 = 1;
-            int m2 = 2;
-            int m3 = 3;
-            int loop = -1;
-            
-
+        { 
             //mainMenuList
             List<string> mainMenuList = new List<string>(){};
             mainMenuList.Add("----------------------------");//0
@@ -42,9 +41,9 @@ namespace SpendingTracker
                 if(!int.TryParse(Console.ReadLine(), out userInput)) //returns false if the user doesn't enter a number
                 {
                     Console.Clear();
-                    Console.WriteLine("Please enter a valid number.");
-                    Console.WriteLine("Press Enter To Continue...");
+                    NonValidNum();
                     Console.ReadLine();
+                    Console.Clear();
                     mainMenu();
                 }
                 else if(userInput == m1)
@@ -61,8 +60,12 @@ namespace SpendingTracker
                 }
                 else if(userInput == m3)
                 {
-                    Console.Clear();
                     Exit();
+                    quit = true;
+                    break; //this exits the "while" loop
+                }
+                if(quit)
+                {
                     break;
                 }
             }
@@ -70,11 +73,8 @@ namespace SpendingTracker
 
         public void SubMenu()
         {
-            int m1 = 1;
-            int m2 = 2;
-            int m3 = 3;
-            int loop = -1;
             System.Console.WriteLine("----------------------------");
+            System.Console.WriteLine("       :Sub Menu:        ");
             System.Console.WriteLine($"{m1}: Main Menu");
             System.Console.WriteLine($"{m2}: Save File");
             System.Console.WriteLine($"{m3}: Exit");
@@ -87,9 +87,9 @@ namespace SpendingTracker
                 if(!int.TryParse(Console.ReadLine(), out userInput)) //returns false if the user doesn't enter a number
                 {
                     Console.Clear();
-                    Console.WriteLine("Please enter a valid number.");
-                    Console.WriteLine("Press Enter To Continue...");
+                    NonValidNum();
                     Console.ReadLine();
+                    Console.Clear();
                     SubMenu();
                 }
                 else if(userInput == m1)
@@ -106,18 +106,32 @@ namespace SpendingTracker
                 }
                 else if(userInput == m3)
                 {
-                    Console.Clear();
                     Exit();
+                    quit = true;
+                    break; //this exits the "while" loop
+                }
+                if(quit)
+                {
                     break;
                 }
             }
         }
         public void CreateNewList()
         {
-            SubMenu();
+            //SubMenu();
+            
             var ML = new MonthList("January");
-            ML.AddTransaction(79.80m);
-            Console.WriteLine($"${ML.testList[0]}");
+            System.Console.WriteLine("----------------------------");
+            System.Console.WriteLine($"        :January:         ");
+            System.Console.WriteLine($"Bills   : {ML.Bills.Count}");
+            System.Console.WriteLine($"Food    : {ML.Food.Count}");
+            System.Console.WriteLine($"Wants   : {ML.Wants.Count}");
+            System.Console.WriteLine($"GSS     : {ML.GasStationSnacks.Count}");
+            System.Console.WriteLine($"WorkAVI : {ML.WorkAVI.Count}");
+            System.Console.WriteLine($"Gas     : {ML.Gas.Count}");
+            System.Console.WriteLine($"Random  : {ML.Random.Count}");
+            System.Console.WriteLine("----------------------------");
+            //ML.AddTransaction(Convert.ToDecimal(Console.ReadLine()));
         }
         public void ViewSavedLists()
         {
@@ -126,16 +140,24 @@ namespace SpendingTracker
         }
         public void Exit()
         {
-            System.Console.WriteLine("Exit Test");
-            SubMenu();
-            
-            
-            
+            Console.Clear();
+            System.Console.WriteLine("----------------------------");
+            System.Console.WriteLine("Quiting System");
+            System.Console.WriteLine("Press enter to continue...");
+            System.Console.WriteLine("----------------------------");
+            Console.ReadLine();
         }
         public void SaveFile()
         {
             SubMenu();
             System.Console.WriteLine("Save File Test");
+        }
+        public void NonValidNum()
+        {
+            System.Console.WriteLine("----------------------------");
+            Console.WriteLine("Please enter a valid number.");
+            Console.WriteLine("Press Enter To Continue...");
+            System.Console.WriteLine("----------------------------");
         }
     }
 }
