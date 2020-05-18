@@ -12,7 +12,8 @@ namespace SpendingTracker
     {
         static void Main(string[] args)
         {
-           SpendingTracker.MainMenu MM = new MainMenu();
+            //Console.Clear();
+            SpendingTracker.UIMenus MM = new UIMenus();
             MM.mainMenu();
 
 
