@@ -12,7 +12,6 @@ namespace SpendingTracker
     {
         //Variables
         public string Month;
-
         //Main List
         public List<List<decimal>> testList;
 
@@ -23,41 +22,67 @@ namespace SpendingTracker
         public List<decimal> GasStationSnacks;
         public List<decimal> WorkAVI;
         public List<decimal> Gas;
-        public List<decimal> Random;
-        public List<decimal> Category;
+        public List<decimal> Other;
         
 
-        public MonthList(string month) //Estabilsh and iniialize a new List of lists
+        public MonthList() //Estabilsh and iniialize a new List of lists
         {
-            var testList = new List<List<decimal>>();
+            var newList = new List<List<decimal>>();
             Bills = new List<decimal>();
             Food = new List<decimal>();
             Wants = new List<decimal>();
             GasStationSnacks = new List<decimal>();
             WorkAVI = new List<decimal>();
             Gas = new List<decimal>();
-            Random = new List<decimal>();
-            testList.Add(Bills);
-            testList.Add(Food);
-            testList.Add(Wants);
-            testList.Add(GasStationSnacks);
-            testList.Add(WorkAVI);
-            testList.Add(Gas);
-            testList.Add(Random);
-
-            
-
-            this.Month = month;
-
-            //testList.ForEach(System.Console.WriteLine);
-            
-            
+            Other = new List<decimal>();
+            newList.Add(Bills);
+            newList.Add(Food);
+            newList.Add(Wants);
+            newList.Add(GasStationSnacks);
+            newList.Add(WorkAVI);
+            newList.Add(Gas);
+            newList.Add(Other);
         }
 
-        public void AddTransaction(decimal transaction) //Adds Transaction item into catogory
+        public void AddTransaction(List<decimal> Category, decimal transaction) //Adds Transaction item into catogory
         {
-            Bills.Add(transaction);
-            System.Console.WriteLine(Bills[0]);
+            if(Category == Bills)
+            {
+                Bills.Add(transaction);
+                
+            }
+            else if(Category == Food)
+            {
+                Food.Add(transaction);
+            }
+            else if(Category == Wants)
+            {
+                Wants.Add(transaction);
+            }
+            else if(Category == GasStationSnacks)
+            {
+                GasStationSnacks.Add(transaction);
+            }
+            else if(Category == WorkAVI)
+            {
+                WorkAVI.Add(transaction);
+            }
+            else if(Category == Gas)
+            {
+                Gas.Add(transaction);
+            }
+            else if(Category == Other)
+            {
+                Other.Add(transaction);
+            }
+            else
+            {
+                System.Console.WriteLine("----------------------------");
+                System.Console.WriteLine("Please Select A Category!");
+                System.Console.WriteLine("Press Enter To Continue...");
+                System.Console.WriteLine("----------------------------");
+                Console.ReadLine();
+            }
         }
         
         
