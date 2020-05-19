@@ -17,6 +17,7 @@ namespace SpendingTracker
             MM.mainMenu();
 
 
+
             //Console.WriteLine($"The lowest transaction is ${stats.Low:N2}");
             //Console.WriteLine($"The highest transaction is ${stats.High:N2}");
             //Console.WriteLine($"The average transaction is ${stats.Average:N2}");

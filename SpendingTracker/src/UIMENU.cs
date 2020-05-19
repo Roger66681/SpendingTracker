@@ -21,21 +21,17 @@ namespace SpendingTracker
         public void mainMenu()
         { 
             //mainMenuList
-            List<string> mainMenuList = new List<string>(){};
-            mainMenuList.Add("----------------------------");//0
-            mainMenuList.Add("Welcome To SpendingTracker!!");//1
-            mainMenuList.Add("         Main Menu          ");//2
-            mainMenuList.Add($"{m1}: Create New List:");//3
-            mainMenuList.Add($"{m2}: View Saved Lists:");//4
-            mainMenuList.Add($"{m3}: Exit:");//5
-            mainMenuList.Add("----------------------------");//6
-
-            var M1 = mainMenuList[3];
-            var M2 = mainMenuList[4];
-            var M3 = mainMenuList[5];
-
-            mainMenuList.ForEach(System.Console.WriteLine);
+            List<string> mainMenuDisplayList = new List<string>(){};
+            mainMenuDisplayList.Add("----------------------------");//0
+            mainMenuDisplayList.Add("Welcome To SpendingTracker!!");//1
+            mainMenuDisplayList.Add("         Main Menu          ");//2
+            mainMenuDisplayList.Add($"{m1}: Create New List:");//3
+            mainMenuDisplayList.Add($"{m2}: View Saved Lists:");//4
+            mainMenuDisplayList.Add($"{m3}: Exit:");//5
+            mainMenuDisplayList.Add("----------------------------");//6
+		    mainMenuDisplayList.ForEach(System.Console.WriteLine);
             
+            //mainMenuList UserInput
             while(loop < userInput)
             {
                 if(!int.TryParse(Console.ReadLine(), out userInput)) //returns false if the user doesn't enter a number
@@ -60,9 +56,9 @@ namespace SpendingTracker
                 }
                 else if(userInput == m3)
                 {
-                    Exit();
                     quit = true;
-                    break; //this exits the "while" loop
+                    Exit();
+                    break; //this exits the "while" mainMenu loop
                 }
                 if(quit)
                 {
@@ -118,25 +114,151 @@ namespace SpendingTracker
         }
         public void CreateNewList()
         {
-            //SubMenu();
+            //variables
             
-            var ML = new MonthList("January");
+            var Months = new List<string>()
+            {
+                "January",   //Months[0]
+                "Febuary",   //Months[1]
+                "March",     //Months[2] 
+                "April",     //Months[3]
+                "May",       //Months[4]
+                "June",      //Months[5]
+                "July",      //Months[6]
+                "August",    //Months[7]
+                "September", //Months[8]
+                "October",   //Months[9]
+                "November",  //Months[10]
+                "December"   //Months[11]
+            };
+            var mN = new List<int>(){1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20};
+            int userInput2 = 0;
+            string month = "";
             System.Console.WriteLine("----------------------------");
-            System.Console.WriteLine($"        :January:         ");
+            System.Console.WriteLine("Please Select A Month...");
+            System.Console.WriteLine("----------------------------");
+            System.Console.WriteLine($"{mN[0]}   : {Months[0]}");
+            System.Console.WriteLine($"{mN[1]}   : {Months[1]}");
+            System.Console.WriteLine($"{mN[2]}   : {Months[2]}");
+            System.Console.WriteLine($"{mN[3]}   : {Months[3]}");
+            System.Console.WriteLine($"{mN[4]}   : {Months[4]}");
+            System.Console.WriteLine($"{mN[5]}   : {Months[5]}");
+            System.Console.WriteLine($"{mN[6]}   : {Months[6]}");
+            System.Console.WriteLine($"{mN[7]}   : {Months[7]}");
+            System.Console.WriteLine($"{mN[8]}   : {Months[8]}");
+            System.Console.WriteLine($"{mN[9]}   : {Months[9]}");
+            System.Console.WriteLine($"{mN[10]}  : {Months[10]}");
+            System.Console.WriteLine($"{mN[11]}  : {Months[11]}");
+            System.Console.WriteLine("----------------------------");
+
+            while(!quit)
+            {
+                if(!int.TryParse(Console.ReadLine(), out userInput2))
+                {
+                    Console.Clear();
+                    NonValidNum();
+                    
+                }
+                else if(userInput2 == mN[0])
+                {
+                    month = Months[0];
+                    quit = true;
+                    break;
+                }
+                else if(userInput2 == mN[1])
+                {
+                    month = Months[1];
+                    quit = true;
+                    break;
+                }
+                else if(userInput2 == mN[2])
+                {
+                    month = Months[2];
+                    quit = true;
+                    break;
+                }
+                else if(userInput2 == mN[3])
+                {
+                    month = Months[3];
+                    quit = true;
+                    break;
+                }
+                else if(userInput2 == mN[4])
+                {
+                    month = Months[4];
+                    quit = true;
+                    break;
+                }
+                else if(userInput2 == mN[5])
+                {
+                    month = Months[5];
+                    quit = true;
+                    break;
+                }
+                else if(userInput2 == mN[6])
+                {
+                    month = Months[6];
+                    quit = true;
+                    break;
+                }
+                else if(userInput2 == mN[7])
+                {
+                    month = Months[7];
+                    quit = true;
+                    break;
+                }
+                else if(userInput2 == mN[8])
+                {
+                    month = Months[8];
+                    quit = true;
+                    break;
+                }
+                else if(userInput2 == mN[9])
+                {
+                    month = Months[9];
+                    quit = true;
+                    break;
+                }
+                else if(userInput2 == mN[10])
+                {
+                    month = Months[10];
+                    quit = true;
+                    break;
+                }
+                else if(userInput2 == mN[11])
+                {
+                    month = Months[11];
+                    quit = true;
+                    break;
+                }
+                else
+                {
+                    mainMenu();
+                }
+            }
+            //Create New Month List
+            var ML = new MonthList();
+            
+        
+            System.Console.WriteLine("----------------------------");
+            System.Console.WriteLine($"        "+ month +"         ");
+            System.Console.WriteLine("----------------------------");
             System.Console.WriteLine($"Bills   : {ML.Bills.Count}");
             System.Console.WriteLine($"Food    : {ML.Food.Count}");
             System.Console.WriteLine($"Wants   : {ML.Wants.Count}");
             System.Console.WriteLine($"GSS     : {ML.GasStationSnacks.Count}");
             System.Console.WriteLine($"WorkAVI : {ML.WorkAVI.Count}");
             System.Console.WriteLine($"Gas     : {ML.Gas.Count}");
-            System.Console.WriteLine($"Random  : {ML.Random.Count}");
+            System.Console.WriteLine($"Other   : {ML.Other.Count}");
             System.Console.WriteLine("----------------------------");
-            //ML.AddTransaction(Convert.ToDecimal(Console.ReadLine()));
+
+            
         }
         public void ViewSavedLists()
         {
-            SubMenu();
+            //SubMenu();
             System.Console.WriteLine("Saved Lists Test");
+            SubMenu();
         }
         public void Exit()
         {
@@ -149,14 +271,15 @@ namespace SpendingTracker
         }
         public void SaveFile()
         {
-            SubMenu();
             System.Console.WriteLine("Save File Test");
+            SubMenu();
         }
         public void NonValidNum()
         {
+        	Console.Clear();
             System.Console.WriteLine("----------------------------");
-            Console.WriteLine("Please enter a valid number.");
-            Console.WriteLine("Press Enter To Continue...");
+            System.Console.WriteLine("Please enter a valid number.");
+            System.Console.WriteLine("Press Enter To Continue...");
             System.Console.WriteLine("----------------------------");
         }
     }

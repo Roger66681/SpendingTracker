@@ -9,10 +9,10 @@ using System.Collections.Generic;
 namespace SpendingTracker
 {
     public class Months
-    { 
+    {
         public Months()
         {
-            var CycleMonthList = new List<string>()
+            var Months = new List<string>()
             {
                 "January",   //CycleMonthList[0]
                 "Febuary",   //CycleMonthList[1]
@@ -26,8 +26,6 @@ namespace SpendingTracker
                 "October",   //CycleMonthList[9]
                 "December"   //CycleMonthList[10]
             };
-            
-            
         }
     }
 }
