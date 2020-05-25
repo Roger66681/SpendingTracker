@@ -1,0 +1,11 @@
+C:\Users\steve\CodeProjects\SpendingTracker\src\bin\Debug\netcoreapp3.1\src.exe
+C:\Users\steve\CodeProjects\SpendingTracker\src\bin\Debug\netcoreapp3.1\src.deps.json
+C:\Users\steve\CodeProjects\SpendingTracker\src\bin\Debug\netcoreapp3.1\src.runtimeconfig.json
+C:\Users\steve\CodeProjects\SpendingTracker\src\bin\Debug\netcoreapp3.1\src.runtimeconfig.dev.json
+C:\Users\steve\CodeProjects\SpendingTracker\src\bin\Debug\netcoreapp3.1\src.dll
+C:\Users\steve\CodeProjects\SpendingTracker\src\bin\Debug\netcoreapp3.1\src.pdb
+C:\Users\steve\CodeProjects\SpendingTracker\src\obj\Debug\netcoreapp3.1\src.csprojAssemblyReference.cache
+C:\Users\steve\CodeProjects\SpendingTracker\src\obj\Debug\netcoreapp3.1\src.AssemblyInfoInputs.cache
+C:\Users\steve\CodeProjects\SpendingTracker\src\obj\Debug\netcoreapp3.1\src.AssemblyInfo.cs
+C:\Users\steve\CodeProjects\SpendingTracker\src\obj\Debug\netcoreapp3.1\src.dll
+C:\Users\steve\CodeProjects\SpendingTracker\src\obj\Debug\netcoreapp3.1\src.pdb
